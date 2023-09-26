@@ -1,7 +1,7 @@
 package com.maxidev.grocerylist.di
 
-import com.maxidev.grocerylist.data.repository.GroceryRepository
-import com.maxidev.grocerylist.data.repository.GroceryRepositoryImpl
+import com.maxidev.grocerylist.data.repository.groceryrepository.GroceryRepository
+import com.maxidev.grocerylist.data.repository.groceryrepository.GroceryRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

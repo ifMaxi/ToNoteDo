@@ -1,4 +1,4 @@
-package com.maxidev.grocerylist.data.repository
+package com.maxidev.grocerylist.data.repository.groceryrepository
 
 import com.maxidev.grocerylist.data.db.entities.GroceryEntity
 import kotlinx.coroutines.flow.Flow

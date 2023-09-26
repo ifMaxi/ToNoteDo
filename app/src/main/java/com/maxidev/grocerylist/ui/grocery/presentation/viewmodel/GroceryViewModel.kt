@@ -3,7 +3,7 @@ package com.maxidev.grocerylist.ui.grocery.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maxidev.grocerylist.data.db.entities.GroceryEntity
-import com.maxidev.grocerylist.data.repository.GroceryRepositoryImpl
+import com.maxidev.grocerylist.data.repository.groceryrepository.GroceryRepositoryImpl
 import com.maxidev.grocerylist.ui.grocery.presentation.state.GroceryUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
