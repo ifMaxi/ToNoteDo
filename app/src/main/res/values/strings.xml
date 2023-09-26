@@ -3,7 +3,7 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="delete_all">Delete All</string>
-    <string name="delete_this">You\'re about to delete everything, are you sure?</string>
+    <string name="delete_this">Delete the entire list. This action can not be undone. You\'re sure ?</string>
     <string name="place_your_item">Place your item</string>
     <string name="write_here">Write here</string>
     <string name="confirm">Confirm</string>

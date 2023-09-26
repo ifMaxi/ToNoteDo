@@ -4,10 +4,10 @@
     <string name="save">Guardar</string>
     <string name="cancel">Cancelar</string>
     <string name="delete_all">Borrar todo</string>
+    <string name="delete_this">Eliminara toda la lista. Esta accion no se puede deshacer. Estas seguro ?</string>
     <string name="place_your_item">Coloque su item</string>
     <string name="write_here">Escriba aquí</string>
     <string name="confirm">Confirmar</string>
     <string name="dismiss">Descartar</string>
-    <string name="delete_this">Estas a punto de borrar todo, estas seguro ?</string>
     <string name="are_you_sure">Estas seguro ?</string>
 </resources>
