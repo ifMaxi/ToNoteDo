@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
 class GroceryRepositoryImpl @Inject constructor(
     private val dao: GroceryDao
 ): GroceryRepository {
