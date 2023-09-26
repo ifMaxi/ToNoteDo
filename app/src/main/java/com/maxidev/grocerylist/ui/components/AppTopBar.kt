@@ -10,6 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.maxidev.grocerylist.R
 
+/**
+ * Reusable Top bar app.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppTopBar(modifier: Modifier = Modifier) {

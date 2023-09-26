@@ -14,6 +14,12 @@ import androidx.compose.ui.unit.dp
 import com.maxidev.grocerylist.R
 import com.maxidev.grocerylist.ui.theme.GroceryListTheme
 
+/**
+ * Reusable button, it will contain different functionalities according to need.
+ *
+ * @param [text] the button text.
+ * @param [onClick] lambda method that will receive different functionalities.
+ */
 @Composable
 fun AppButton(
     modifier: Modifier = Modifier,

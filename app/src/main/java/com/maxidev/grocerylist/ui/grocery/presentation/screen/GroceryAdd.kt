@@ -26,6 +26,12 @@ import com.maxidev.grocerylist.R
 import com.maxidev.grocerylist.ui.components.AppButton
 import com.maxidev.grocerylist.ui.grocery.presentation.viewmodel.GroceryViewModel
 
+/**
+ * Component that will be the screen for adding an item to the app's database.
+ *
+ * @param [viewmodel] bridge that contains the business logic.
+ * @param [navigateBack] navigate to the previous screen.
+ */
 @Composable
 fun GroceryAdd(
     modifier: Modifier = Modifier,

@@ -18,6 +18,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.maxidev.grocerylist.R
 
+/**
+ * Reusable app dialog.
+ */
 @Composable
 fun AppDialog(
     modifier: Modifier = Modifier,

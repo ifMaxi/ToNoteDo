@@ -29,6 +29,11 @@ import com.maxidev.grocerylist.ui.components.AppFloatingButton
 import com.maxidev.grocerylist.ui.components.AppTopBar
 import com.maxidev.grocerylist.ui.grocery.presentation.viewmodel.GroceryViewModel
 
+/**
+ * Main screen of the app.
+ * It will show all the items contained in the database.
+ * It will also have the functionality of being able to delete all items if desired.
+ */
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier,
@@ -44,7 +49,7 @@ fun MainScreen(
         },
         floatingActionButton = {
             AppFloatingButton(
-                onAdd = { onNavigate() },
+                onClick = { onNavigate() },
                 icon = Icons.Default.Add
             )
         },

@@ -9,6 +9,11 @@ import androidx.navigation.compose.rememberNavController
 import com.maxidev.grocerylist.ui.grocery.presentation.screen.GroceryAdd
 import com.maxidev.grocerylist.ui.grocery.presentation.screen.MainScreen
 
+/**
+ * Navigation graph, will manage the app screens.
+ *
+ * @param [navController] keeps track of the back stack of composable elements.
+ */
 @Composable
 fun NavGraph(
     modifier: Modifier = Modifier,

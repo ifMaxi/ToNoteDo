@@ -24,6 +24,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.maxidev.grocerylist.ui.theme.GroceryListTheme
 
+/**
+ * Composable component that will be displayed on the screen as text, storing the content itself.
+ * In turn, the text of the completed task can be deleted and crossed out as appropriate.
+ *
+ * @param [onDelete] lambda method that will have the functionality of deleting the item.
+ */
 @Composable
 fun GroceryItem(
     modifier: Modifier = Modifier,

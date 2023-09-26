@@ -8,14 +8,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 
+/**
+ * Reusable FAB. It will have different functionalities as appropriate.
+ *
+ * @param [onClick] lambda method that will receive different functionalities.
+ * @param [icon] the desired icon for the button.
+ */
 @Composable
 fun AppFloatingButton(
     modifier: Modifier = Modifier,
-    onAdd: () -> Unit,
+    onClick: () -> Unit,
     icon: ImageVector
 ) {
     FloatingActionButton(
-        onClick = { onAdd() },
+        onClick = { onClick() },
         elevation = FloatingActionButtonDefaults.elevation(6.dp),
         modifier = modifier
     ) {
