@@ -1,4 +1,4 @@
-package com.maxidev.grocerylist.ui.grocery.presentation.screen
+package com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

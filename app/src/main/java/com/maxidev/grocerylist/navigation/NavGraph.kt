@@ -6,8 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.maxidev.grocerylist.ui.grocery.presentation.screen.GroceryAdd
-import com.maxidev.grocerylist.ui.grocery.presentation.screen.MainScreen
+import com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen.GroceryAdd
+import com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen.MainScreen
 
 /**
  * Navigation graph, will manage the app screens.
