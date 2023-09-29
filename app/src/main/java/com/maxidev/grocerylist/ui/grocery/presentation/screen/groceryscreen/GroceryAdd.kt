@@ -2,13 +2,11 @@ package com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
@@ -23,7 +21,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maxidev.grocerylist.R
-import com.maxidev.grocerylist.ui.components.AppButton
+import com.maxidev.grocerylist.ui.components.RowOfButtons
 import com.maxidev.grocerylist.ui.grocery.presentation.viewmodel.GroceryViewModel
 
 /**
@@ -90,31 +88,4 @@ private fun GroceryTextField(
         modifier = modifier
             .fillMaxWidth()
     )
-}
-
-@Composable
-private fun RowOfButtons(
-    modifier: Modifier = Modifier,
-    onSave: () -> Unit,
-    onCancel: () -> Unit
-) {
-    Row(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(20.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Center
-    ){
-        AppButton(
-            modifier = modifier,
-            text = R.string.cancel,
-            onClick = onCancel
-        )
-        Spacer(modifier = Modifier.width(25.dp))
-        AppButton(
-            modifier = modifier,
-            text = R.string.save,
-            onClick = onSave
-        )
-    }
 }
