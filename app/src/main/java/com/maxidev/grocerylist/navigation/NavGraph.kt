@@ -20,6 +20,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen.GroceryAdd
 import com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen.MainScreen
+import com.maxidev.grocerylist.ui.grocery.presentation.screen.recipescreen.RecipeAdd
+import com.maxidev.grocerylist.ui.grocery.presentation.screen.recipescreen.SecondaryScreen
 
 /**
  * Navigation graph, will manage the app screens.
@@ -87,6 +89,18 @@ fun NavGraph(
             }
             composable(route = Destinations.GroceryAdd.route) {
                 GroceryAdd(
+                    navigateBack = { navController.popBackStack() }
+                )
+            }
+            composable(route = Destinations.RecipeMain.route) {
+                SecondaryScreen(
+                    onNavigate = {
+                        navController.navigate(Destinations.RecipeAdd.route)
+                    }
+                )
+            }
+            composable(route = Destinations.RecipeAdd.route) {
+                RecipeAdd(
                     navigateBack = { navController.popBackStack() }
                 )
             }
