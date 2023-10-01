@@ -45,7 +45,7 @@ fun MainScreen(
 
     Scaffold(
         topBar = {
-            AppTopBar()
+            AppTopBar(text = R.string.grocery)
         },
         floatingActionButton = {
             AppFloatingButton(

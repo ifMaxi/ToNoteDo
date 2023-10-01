@@ -1,5 +1,7 @@
 package com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen
 
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
@@ -23,6 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.maxidev.grocerylist.R
 import com.maxidev.grocerylist.ui.components.RowOfButtons
 import com.maxidev.grocerylist.ui.grocery.presentation.viewmodel.GroceryViewModel
+import com.maxidev.grocerylist.utils.Constants.TOAST_TEXT
 
 /**
  * Component that will be the screen for adding an item to the app's database.
@@ -36,6 +40,8 @@ fun GroceryAdd(
     viewmodel: GroceryViewModel = hiltViewModel(),
     navigateBack: () -> Unit
 ) {
+    val context = LocalContext.current
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -58,6 +64,7 @@ fun GroceryAdd(
         RowOfButtons(
             onSave = {
                 viewmodel.insert()
+                Toast.makeText(context, TOAST_TEXT, LENGTH_SHORT).show()
                 navigateBack()
             },
             onCancel = { navigateBack() }
