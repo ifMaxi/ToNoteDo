@@ -26,7 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.maxidev.grocerylist.R
 import com.maxidev.grocerylist.ui.components.RowOfButtons
 import com.maxidev.grocerylist.ui.grocery.presentation.viewmodel.GroceryViewModel
-import com.maxidev.grocerylist.utils.Constants.TOAST_TEXT
+import com.maxidev.grocerylist.utils.Constants.TOAST_TEXT_SAVED
 
 /**
  * Component that will be the screen for adding an item to the app's database.
@@ -64,7 +64,7 @@ fun GroceryAdd(
         RowOfButtons(
             onSave = {
                 viewmodel.insert()
-                Toast.makeText(context, TOAST_TEXT, LENGTH_SHORT).show()
+                Toast.makeText(context, TOAST_TEXT_SAVED, LENGTH_SHORT).show()
                 navigateBack()
             },
             onCancel = { navigateBack() }

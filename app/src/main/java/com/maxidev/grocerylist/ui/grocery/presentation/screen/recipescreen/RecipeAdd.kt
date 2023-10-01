@@ -28,7 +28,7 @@ import com.maxidev.grocerylist.R
 import com.maxidev.grocerylist.ui.components.RowOfButtons
 import com.maxidev.grocerylist.ui.grocery.presentation.viewmodel.RecipeViewModel
 import com.maxidev.grocerylist.ui.theme.GroceryListTheme
-import com.maxidev.grocerylist.utils.Constants.TOAST_TEXT
+import com.maxidev.grocerylist.utils.Constants.TOAST_TEXT_SAVED
 
 @Composable
 fun RecipeAdd(
@@ -66,7 +66,7 @@ fun RecipeAdd(
         RowOfButtons(
             onSave = {
                 viewModel.upsert()
-                Toast.makeText(context, TOAST_TEXT, LENGTH_SHORT).show()
+                Toast.makeText(context, TOAST_TEXT_SAVED, LENGTH_SHORT).show()
                 navigateBack()
             },
             onCancel = { navigateBack() }

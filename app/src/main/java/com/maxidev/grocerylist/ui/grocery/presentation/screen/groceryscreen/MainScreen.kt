@@ -1,5 +1,6 @@
 package com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -28,6 +30,7 @@ import com.maxidev.grocerylist.ui.components.AppDialog
 import com.maxidev.grocerylist.ui.components.AppFloatingButton
 import com.maxidev.grocerylist.ui.components.AppTopBar
 import com.maxidev.grocerylist.ui.grocery.presentation.viewmodel.GroceryViewModel
+import com.maxidev.grocerylist.utils.Constants
 
 /**
  * Main screen of the app.
@@ -42,6 +45,7 @@ fun MainScreen(
 ) {
     val vm = viewModel.homeState.collectAsStateWithLifecycle()
     val openDialog = remember { mutableStateOf(false) }
+    val context = LocalContext.current
 
     Scaffold(
         topBar = {
@@ -57,8 +61,14 @@ fun MainScreen(
     ) { paddingValues ->
         ScreenContent(
             modifier = modifier.padding(paddingValues),
-            onDelete = { viewModel.delete(it) },
-            onDeleteAll = { openDialog.value = true },
+            onDelete = {
+                viewModel.delete(it)
+                Toast.makeText(context, Constants.TOAST_TEXT_DELETE, Toast.LENGTH_SHORT).show()
+            },
+            onDeleteAll = {
+                openDialog.value = true
+                Toast.makeText(context, Constants.TOAST_TEXT_DELETE_ALL, Toast.LENGTH_SHORT).show()
+            },
             lazyList = vm.value.listOfGrocery
         )
     }
