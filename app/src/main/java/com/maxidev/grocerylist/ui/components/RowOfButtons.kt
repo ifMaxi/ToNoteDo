@@ -1,5 +1,6 @@
 package com.maxidev.grocerylist.ui.components
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,6 +16,7 @@ import com.maxidev.grocerylist.R
 @Composable
 internal fun RowOfButtons(
     modifier: Modifier = Modifier,
+    @StringRes buttonText: Int,
     onSave: () -> Unit,
     onCancel: () -> Unit
 ) {
@@ -31,7 +33,7 @@ internal fun RowOfButtons(
         Spacer(modifier = Modifier.width(25.dp))
         AppButton(
             modifier = modifier,
-            text = R.string.save,
+            text = buttonText,
             onClick = onSave
         )
     }

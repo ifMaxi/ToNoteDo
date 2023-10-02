@@ -64,6 +64,7 @@ fun RecipeAdd(
             }
         )
         RowOfButtons(
+            buttonText = R.string.save,
             onSave = {
                 viewModel.upsert()
                 Toast.makeText(context, TOAST_TEXT_SAVED, LENGTH_SHORT).show()

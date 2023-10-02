@@ -96,7 +96,8 @@ fun NavGraph(
                 SecondaryScreen(
                     onNavigate = {
                         navController.navigate(Destinations.RecipeAdd.route)
-                    }
+                    },
+                    navigateToUpdate = {}
                 )
             }
             composable(route = Destinations.RecipeAdd.route) {
@@ -104,7 +105,9 @@ fun NavGraph(
                     navigateBack = { navController.popBackStack() }
                 )
             }
+            composable(route = Destinations.RecipeUpdate.route) {
+                TODO()
+            }
         }
     }
-
 }

@@ -23,13 +23,14 @@ import com.maxidev.grocerylist.data.db.entities.RecipeEntity
 import com.maxidev.grocerylist.ui.components.AppFloatingButton
 import com.maxidev.grocerylist.ui.components.AppTopBar
 import com.maxidev.grocerylist.ui.grocery.presentation.viewmodel.RecipeViewModel
-import com.maxidev.grocerylist.utils.Constants
+import com.maxidev.grocerylist.utils.Constants.TOAST_TEXT_DELETE
 
 @Composable
 fun SecondaryScreen(
     modifier: Modifier = Modifier,
     viewModel: RecipeViewModel = hiltViewModel(),
-    onNavigate: () -> Unit
+    onNavigate: () -> Unit,
+    navigateToUpdate: () -> Unit
 ) {
     val vm = viewModel.homeState.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -49,9 +50,9 @@ fun SecondaryScreen(
         ScreenContent(
             onDelete = {
                 viewModel.delete(it)
-                Toast.makeText(context, Constants.TOAST_TEXT_DELETE, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, TOAST_TEXT_DELETE, Toast.LENGTH_SHORT).show()
             },
-            onEdit = {},
+            onEdit = { navigateToUpdate() },
             recipes = vm.value.listOfRecipe,
             modifier = modifier.padding(paddingValues)
         )
@@ -62,7 +63,7 @@ fun SecondaryScreen(
 private fun ScreenContent(
     modifier: Modifier = Modifier,
     onDelete: (RecipeEntity) -> Unit,
-    onEdit: () -> Unit,
+    onEdit: (RecipeEntity) -> Unit,
     recipes: List<RecipeEntity>
 ) {
     val listGridState = rememberLazyGridState()
@@ -78,7 +79,7 @@ private fun ScreenContent(
         items(recipes) { recipe ->
             RecipeItem(
                 onDelete = { onDelete(recipe) },
-                onEdit = { onEdit() },
+                onEdit = { onEdit(recipe) },
                 recipeTitle = recipe.recipeTitle
             )
         }

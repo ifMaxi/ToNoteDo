@@ -3,6 +3,7 @@
     <string name="app_name">Lista de Alimentos</string>
     <string name="save">Guardar</string>
     <string name="cancel">Cancelar</string>
+    <string name="update">Actualizar</string>
     <string name="delete_all">Borrar todo</string>
     <string name="delete_this">Eliminara toda la lista. Esta acción no se puede deshacer. Estas seguro ?</string>
     <string name="place_your_item">Coloque su item</string>
@@ -12,7 +13,8 @@
     <string name="are_you_sure">Estas seguro ?</string>
     <string name="grocery">Alimentos</string>
     <string name="recipe">Recetas</string>
-    <string name="write_your_recipe">Escriba su Receta</string>
+    <string name="write_your_recipe">Escriba su receta</string>
     <string name="title">Título</string>
     <string name="content">Contenido</string>
+    <string name="edit_your_recipe">Edite su receta</string>
 </resources>

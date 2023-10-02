@@ -62,6 +62,7 @@ fun GroceryAdd(
         )
         Spacer(modifier = Modifier.height(25.dp))
         RowOfButtons(
+            buttonText = R.string.save,
             onSave = {
                 viewmodel.insert()
                 Toast.makeText(context, TOAST_TEXT_SAVED, LENGTH_SHORT).show()
