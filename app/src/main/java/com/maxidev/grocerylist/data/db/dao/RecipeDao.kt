@@ -2,8 +2,9 @@ package com.maxidev.grocerylist.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
+import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Upsert
+import androidx.room.Update
 import com.maxidev.grocerylist.data.db.entities.RecipeEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -12,11 +13,11 @@ interface RecipeDao {
     @Query("SELECT * FROM recipe")
     fun getAllRecipe(): Flow<List<RecipeEntity>>
 
-//    @Query("SELECT * FROM recipe WHERE id = :id")
-//    fun getRecipeById(id: Long?): Flow<RecipeEntity>
-
-    @Upsert
+    @Insert
     suspend fun insertRecipe(recipe: RecipeEntity)
+
+    @Update
+    suspend fun updateRecipe(recipe: RecipeEntity)
 
     @Delete
     suspend fun deleteRecipe(recipe: RecipeEntity)
