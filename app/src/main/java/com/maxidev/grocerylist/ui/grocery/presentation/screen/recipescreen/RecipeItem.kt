@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.maxidev.grocerylist.data.db.entities.RecipeEntity
 import com.maxidev.grocerylist.ui.theme.GroceryListTheme
 
 @Composable
@@ -28,13 +29,13 @@ fun RecipeItem(
     modifier: Modifier = Modifier,
     onDelete: () -> Unit,
     onEdit: () -> Unit,
-    recipeTitle: String
+    recipeTitle: RecipeEntity
 ) {
     ItemCard(
         modifier = modifier,
         onClick = { onEdit() },
         onClickIcon = { onDelete() },
-        title = recipeTitle
+        title = recipeTitle.recipeTitle
     )
 }
 
