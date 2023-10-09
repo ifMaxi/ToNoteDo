@@ -6,6 +6,8 @@ import kotlinx.coroutines.flow.Flow
 interface RecipeRepository {
     fun getAll(): Flow<List<RecipeEntity>>
 
+    fun getById(id: Long?): Flow<RecipeEntity>
+
     suspend fun insertRecipe(recipe: RecipeEntity)
 
     suspend fun updateRecipe(recipe: RecipeEntity)

@@ -12,6 +12,10 @@ class RecipeRepositoryImpl @Inject constructor(
         return dao.getAllRecipe()
     }
 
+    override fun getById(id: Long?): Flow<RecipeEntity> {
+        return dao.getRecipeById(id)
+    }
+
     override suspend fun insertRecipe(recipe: RecipeEntity) {
         return dao.insertRecipe(recipe)
     }

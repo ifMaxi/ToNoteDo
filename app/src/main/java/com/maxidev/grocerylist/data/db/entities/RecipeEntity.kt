@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "recipe")
 data class RecipeEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Long,
+    val id: Long?,
     val recipeTitle: String,
     val recipeBody: String,
     @ColumnInfo(name = "image", typeAffinity = ColumnInfo.BLOB)

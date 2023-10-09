@@ -11,10 +11,14 @@ import dagger.hilt.android.components.ActivityComponent
 
 @Module
 @InstallIn(ActivityComponent::class)
-interface RepositoryModule {
+abstract class RepositoryModule {
     @Binds
-    fun bindsGroceryRepositoryImpl(repository: GroceryRepositoryImpl): GroceryRepository
+    abstract fun bindsGroceryRepositoryImpl(
+        repository: GroceryRepositoryImpl
+    ): GroceryRepository
 
     @Binds
-    fun bindsRecipeRepositoryImpl(repository: RecipeRepositoryImpl): RecipeRepository
+    abstract fun bindsRecipeRepositoryImpl(
+        repository: RecipeRepositoryImpl
+    ): RecipeRepository
 }
