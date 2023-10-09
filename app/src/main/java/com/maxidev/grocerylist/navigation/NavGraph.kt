@@ -14,13 +14,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen.GroceryAdd
 import com.maxidev.grocerylist.ui.grocery.presentation.screen.groceryscreen.MainScreen
 import com.maxidev.grocerylist.ui.grocery.presentation.screen.recipescreen.RecipeAdd
+import com.maxidev.grocerylist.ui.grocery.presentation.screen.recipescreen.RecipeUpdate
 import com.maxidev.grocerylist.ui.grocery.presentation.screen.recipescreen.SecondaryScreen
 
 /**
@@ -97,7 +100,9 @@ fun NavGraph(
                     onNavigate = {
                         navController.navigate(Destinations.RecipeAdd.route)
                     },
-                    navigateToUpdate = {}
+                    navigateToUpdate = {
+                        navController.navigate(Destinations.RecipeUpdate.route + "/$id")
+                    }
                 )
             }
             composable(route = Destinations.RecipeAdd.route) {
@@ -105,8 +110,16 @@ fun NavGraph(
                     navigateBack = { navController.popBackStack() }
                 )
             }
-            composable(route = Destinations.RecipeUpdate.route) {
-                TODO()
+            composable(
+                route = Destinations.RecipeUpdate.route + "/{id}",
+                arguments = listOf(navArgument("id") { type = NavType.LongType })
+            ) { backStackEntry ->
+                val backStackId = backStackEntry.arguments?.getLong("id") ?: 0L
+
+                RecipeUpdate(
+                    navigateBack = { navController.popBackStack() },
+                    id = backStackId
+                )
             }
         }
     }
