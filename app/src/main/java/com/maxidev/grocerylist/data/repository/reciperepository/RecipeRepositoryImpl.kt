@@ -8,23 +8,13 @@ import javax.inject.Inject
 class RecipeRepositoryImpl @Inject constructor(
     private val dao: RecipeDao
 ): RecipeRepository {
-    override fun getAll(): Flow<List<RecipeEntity>> {
-        return dao.getAllRecipe()
-    }
+    override fun getAll(): Flow<List<RecipeEntity>> = dao.getAllRecipe()
 
-    override fun getById(id: Long?): Flow<RecipeEntity> {
-        return dao.getRecipeById(id)
-    }
+    override fun getById(id: Long): Flow<RecipeEntity?> = dao.getRecipeById(id)
 
-    override suspend fun insertRecipe(recipe: RecipeEntity) {
-        return dao.insertRecipe(recipe)
-    }
+    override suspend fun insertRecipe(recipe: RecipeEntity) = dao.insertRecipe(recipe)
 
-    override suspend fun updateRecipe(recipe: RecipeEntity) {
-        return dao.updateRecipe(recipe)
-    }
+    override suspend fun updateRecipe(recipe: RecipeEntity) = dao.updateRecipe(recipe)
 
-    override suspend fun deleteRecipe(recipe: RecipeEntity) {
-        return dao.deleteRecipe(recipe)
-    }
+    override suspend fun deleteRecipe(recipe: RecipeEntity) = dao.deleteRecipe(recipe)
 }
