@@ -8,5 +8,5 @@ data class RecipeUiState(
     val listOfRecipe: List<RecipeEntity> = emptyList(),
     var recipeTitleInput: MutableState<String> = mutableStateOf(""),
     var recipeBodyInput: MutableState<String> = mutableStateOf(""),
-    var recipeId: Long? = null
+    var recipeId: Long = 0L
 )
