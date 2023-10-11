@@ -101,7 +101,12 @@ fun NavGraph(
                         navController.navigate(Destinations.RecipeAdd.route)
                     },
                     navigateToUpdate = {
-                        navController.navigate(Destinations.RecipeUpdate.route + "/$id")
+                        navController.navigate(
+                            Destinations.RecipeUpdate.route + "?id=${it.id}&" +
+                                    "title=${it.recipeTitle}&" +
+                                    "body=${it.recipeBody}"
+                            //"/${it.id}/${it.recipeTitle}/${it.recipeBody}"
+                        )
                     }
                 )
             }
@@ -111,14 +116,28 @@ fun NavGraph(
                 )
             }
             composable(
-                route = Destinations.RecipeUpdate.route + "/{id}",
-                arguments = listOf(navArgument("id") { type = NavType.LongType })
+                route = Destinations.RecipeUpdate.route + "?id={id}&title={title}&body={body}",
+                arguments = listOf(
+                    navArgument("id") { type = NavType.LongType },
+                    navArgument("title") {
+                        type = NavType.StringType
+                        nullable = true
+                    },
+                    navArgument("body") {
+                        type = NavType.StringType
+                        nullable = true
+                    }
+                )
             ) { backStackEntry ->
-                val backStackId = backStackEntry.arguments?.getLong("id") ?: 0L
+                val backStackId = backStackEntry.arguments!!.getLong("id")
+                val backStackTitle = backStackEntry.arguments?.getString("title")
+                val backStackBody = backStackEntry.arguments?.getString("body")
 
                 RecipeUpdate(
                     navigateBack = { navController.popBackStack() },
-                    id = backStackId
+                    id = backStackId,
+                    title = backStackTitle,
+                    body = backStackBody
                 )
             }
         }
