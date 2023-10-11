@@ -31,12 +31,14 @@ fun RecipeItem(
     onEdit: () -> Unit,
     recipeTitle: RecipeEntity
 ) {
-    ItemCard(
+    recipeTitle.recipeTitle?.let {
+        ItemCard(
         modifier = modifier,
         onClick = { onEdit() },
         onClickIcon = { onDelete() },
-        title = recipeTitle.recipeTitle
+        title = it
     )
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -60,7 +62,6 @@ private fun ItemCard(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            // IMAGE
             Row(
                 modifier = Modifier
                     .fillMaxWidth()

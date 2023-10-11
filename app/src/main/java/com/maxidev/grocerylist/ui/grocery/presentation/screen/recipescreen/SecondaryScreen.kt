@@ -1,6 +1,7 @@
 package com.maxidev.grocerylist.ui.grocery.presentation.screen.recipescreen
 
 import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -30,7 +31,7 @@ fun SecondaryScreen(
     modifier: Modifier = Modifier,
     viewModel: RecipeViewModel = hiltViewModel(),
     onNavigate: () -> Unit,
-    navigateToUpdate: () -> Unit
+    navigateToUpdate: (RecipeEntity) -> Unit
 ) {
     val vm = viewModel.homeState.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -50,9 +51,9 @@ fun SecondaryScreen(
         ScreenContent(
             onDelete = {
                 viewModel.delete(it)
-                Toast.makeText(context, TOAST_TEXT_DELETE, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, TOAST_TEXT_DELETE, LENGTH_SHORT).show()
             },
-            onEdit = { navigateToUpdate() },
+            onEdit = { navigateToUpdate(it) },
             recipes = vm.value.listOfRecipe,
             modifier = modifier.padding(paddingValues)
         )
@@ -80,7 +81,7 @@ private fun ScreenContent(
             RecipeItem(
                 onDelete = { onDelete(recipe) },
                 onEdit = { onEdit(recipe) },
-                recipeTitle = recipe.recipeTitle
+                recipeTitle = recipe
             )
         }
     }

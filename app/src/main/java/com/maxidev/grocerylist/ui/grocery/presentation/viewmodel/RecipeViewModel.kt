@@ -7,6 +7,7 @@ import com.maxidev.grocerylist.data.repository.reciperepository.RecipeRepository
 import com.maxidev.grocerylist.ui.grocery.presentation.state.RecipeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -19,15 +20,15 @@ import javax.inject.Inject
 class RecipeViewModel @Inject constructor(
     private val repository: RecipeRepositoryImpl
 ): ViewModel() {
-    private val _uiState = MutableStateFlow(RecipeUiState())
-    val uiState = _uiState.value
+    private val _state = MutableStateFlow(RecipeUiState())
+    val state = _state.value
 
     fun onTitleChange(input: String) {
-        uiState.recipeTitleInput.value = input
+        state.recipeTitleInput.value = input
     }
 
     fun onBodyChange(input: String) {
-        uiState.recipeBodyInput.value = input
+        state.recipeBodyInput.value = input
     }
 
     val homeState: StateFlow<RecipeUiState> =
@@ -38,24 +39,31 @@ class RecipeViewModel @Inject constructor(
                 initialValue = RecipeUiState()
             )
 
-    fun upsert() {
-        val inputTitle = uiState.recipeTitleInput.value
-        val inputBody = uiState.recipeBodyInput.value
+    fun byId(id: Long): Flow<RecipeEntity?> = repository.getById(id)
+
+    fun insert() {
+        val inputTitle = state.recipeTitleInput.value
+        val inputBody = state.recipeBodyInput.value
+        val id = state.recipeId
         val entity = RecipeEntity(
-            id = 0,
+            id = id,
             recipeTitle = inputTitle,
-            recipeBody = inputBody,
-            image = null
+            recipeBody = inputBody
         )
 
         viewModelScope.launch(Dispatchers.IO) {
-            repository.upsertRecipe(entity)
+            repository.insertRecipe(entity)
         }
     }
 
-    fun delete(entity: RecipeEntity) {
+    fun update(recipe: RecipeEntity) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.deleteRecipe(entity)
+            repository.updateRecipe(recipe)
         }
+    }
+
+
+    fun delete(entity: RecipeEntity) = viewModelScope.launch(Dispatchers.IO) {
+        repository.deleteRecipe(entity)
     }
 }

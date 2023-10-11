@@ -54,11 +54,11 @@ fun RecipeAdd(
             )
         }
         ColumnOfTextFields(
-            titleValue = viewModel.uiState.recipeTitleInput.value,
+            titleValue = viewModel.state.recipeTitleInput.value,
             onTitleChange = { title ->
                 viewModel.onTitleChange(title)
             },
-            bodyValue = viewModel.uiState.recipeBodyInput.value,
+            bodyValue = viewModel.state.recipeBodyInput.value,
             onBodyChange = { body ->
                 viewModel.onBodyChange(body)
             }
