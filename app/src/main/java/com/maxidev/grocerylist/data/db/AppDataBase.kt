@@ -11,7 +11,7 @@ import com.maxidev.grocerylist.utils.Converters
 
 @Database(
     entities = [GroceryEntity::class, RecipeEntity::class],
-    version = 5,
+    version = 6,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

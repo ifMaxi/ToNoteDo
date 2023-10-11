@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 data class RecipeEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
-    val recipeTitle: String,
-    val recipeBody: String
+    val recipeTitle: String?,
+    val recipeBody: String?
 )
