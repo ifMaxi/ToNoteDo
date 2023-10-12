@@ -67,7 +67,6 @@ fun MainScreen(
             },
             onDeleteAll = {
                 openDialog.value = true
-                Toast.makeText(context, Constants.TOAST_TEXT_DELETE_ALL, Toast.LENGTH_SHORT).show()
             },
             lazyList = vm.value.listOfGrocery
         )
@@ -79,6 +78,7 @@ fun MainScreen(
             onConfirmation = {
                 viewModel.deleteAll()
                 openDialog.value = false
+                Toast.makeText(context, Constants.TOAST_TEXT_DELETE_ALL, Toast.LENGTH_SHORT).show()
             },
             onDismiss = { openDialog.value = false },
             dialogTitle = R.string.are_you_sure,
