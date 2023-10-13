@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Delete
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -18,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -29,16 +31,15 @@ fun RecipeItem(
     modifier: Modifier = Modifier,
     onDelete: () -> Unit,
     onEdit: () -> Unit,
-    recipeTitle: RecipeEntity
+    recipe: RecipeEntity?
 ) {
-    recipeTitle.recipeTitle?.let {
-        ItemCard(
+    ItemCard(
         modifier = modifier,
         onClick = { onEdit() },
         onClickIcon = { onDelete() },
-        title = it
+        title = recipe?.recipeTitle,
+        body = recipe?.recipeBody
     )
-    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,25 +48,27 @@ private fun ItemCard(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     onClickIcon: () -> Unit,
-    title: String
+    title: String?,
+    body: String?
 ) {
     OutlinedCard(
         onClick = onClick,
+        elevation = CardDefaults.cardElevation(5.dp),
         modifier = modifier
             .fillMaxWidth()
-            .padding(15.dp)
+            .padding(5.dp)
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(10.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(10.dp)
+            verticalArrangement = Arrangement.spacedBy(5.dp)
         ) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(10.dp),
+                    .padding(5.dp),
                 horizontalArrangement = Arrangement.Start,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -83,6 +86,13 @@ private fun ItemCard(
                     )
                 }
             }
+            Text(
+                text = body.toString(),
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier
+                    .width(230.dp)
+            )
         }
     }
 }
@@ -91,6 +101,6 @@ private fun ItemCard(
 @Composable
 private fun CardPreview() {
     GroceryListTheme {
-        ItemCard(onClick = {}, title = "Hello", onClickIcon = {})
+        ItemCard(onClick = {}, title = "Hello", onClickIcon = {}, body = "Hi")
     }
 }

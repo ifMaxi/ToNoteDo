@@ -46,7 +46,7 @@ fun SecondaryScreen(
                 icon = Icons.Default.Add
             )
         },
-        floatingActionButtonPosition = FabPosition.Center
+        floatingActionButtonPosition = FabPosition.End
     ) { paddingValues ->
         ScreenContent(
             onDelete = {
@@ -75,13 +75,14 @@ private fun ScreenContent(
         modifier = modifier
             .fillMaxSize()
             .padding(20.dp),
-        horizontalArrangement = Arrangement.spacedBy(5.dp)
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         items(recipes) { recipe ->
             RecipeItem(
                 onDelete = { onDelete(recipe) },
                 onEdit = { onEdit(recipe) },
-                recipeTitle = recipe
+                recipe = recipe,
             )
         }
     }
