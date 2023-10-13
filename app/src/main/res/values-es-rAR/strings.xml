@@ -17,4 +17,6 @@
     <string name="title">Título</string>
     <string name="content">Contenido</string>
     <string name="edit_your_recipe">Edite su receta</string>
+    <string name="delete_the_item">Borrarás el item.</string>
+    <string name="new_item">Nuevo</string>
 </resources>

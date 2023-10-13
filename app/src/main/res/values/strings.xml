@@ -19,4 +19,6 @@
     <string name="edit_your_recipe">Edit your recipe</string>
     <string name="title">Title</string>
     <string name="content">Content</string>
+    <string name="delete_the_item">You will delete the item.</string>
+    <string name="new_item">New</string>
 </resources>
