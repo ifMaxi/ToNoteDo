@@ -3,6 +3,7 @@ package com.maxidev.tonotedolist.ui.presentation.screen.notescreen
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -70,13 +71,12 @@ private fun ScreenContent(
     val listGridState = rememberLazyGridState()
 
     LazyHorizontalGrid(
-        rows = GridCells.Fixed(2),
+        modifier = modifier.fillMaxSize(),
+        rows = GridCells.Adaptive(minSize = 180.dp),
         state = listGridState,
-        modifier = modifier
-            .fillMaxSize()
-            .padding(20.dp),
-        verticalArrangement = Arrangement.spacedBy(10.dp),
-        horizontalArrangement = Arrangement.spacedBy(10.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
+        contentPadding = PaddingValues(20.dp)
     ) {
         items(notes) { note ->
             NoteItem(

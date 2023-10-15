@@ -3,8 +3,8 @@ package com.maxidev.tonotedolist.navigation
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Notes
 import androidx.compose.material.icons.filled.QuestionMark
-import androidx.compose.material.icons.filled.ReceiptLong
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.maxidev.grocerylist.R
 
@@ -31,7 +31,7 @@ sealed class Destinations(
     data object NoteMain: Destinations(
         route = "note_main",
         resourceId = R.string.note,
-        icons = Icons.Filled.ReceiptLong
+        icons = Icons.Filled.Notes
     )
     data object NoteAdd: Destinations(
         route = "note_add",

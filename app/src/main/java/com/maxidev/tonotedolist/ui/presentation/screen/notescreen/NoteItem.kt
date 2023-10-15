@@ -14,6 +14,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -52,6 +53,7 @@ private fun ItemCard(
     OutlinedCard(
         onClick = onClick,
         elevation = CardDefaults.cardElevation(5.dp),
+        colors = CardDefaults.outlinedCardColors(MaterialTheme.colorScheme.surfaceVariant),
         modifier = modifier
             .fillMaxWidth()
             .padding(5.dp)
@@ -71,8 +73,9 @@ private fun ItemCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Note: $title",
+                    text = title.toString(),
                     overflow = TextOverflow.Ellipsis,
+                    style = MaterialTheme.typography.headlineMedium,
                     modifier = Modifier
                         .width(200.dp)
                 )
@@ -87,6 +90,7 @@ private fun ItemCard(
             Text(
                 text = body.toString(),
                 overflow = TextOverflow.Ellipsis,
+                style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Justify,
                 modifier = Modifier
                     .width(230.dp)

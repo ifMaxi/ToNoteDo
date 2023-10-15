@@ -126,7 +126,7 @@ private fun ColumnOfTextFields(
             }),
             modifier = Modifier
                 .fillMaxWidth()
-                .height(560.dp)
+                .height(400.dp)
         )
     }
 }
