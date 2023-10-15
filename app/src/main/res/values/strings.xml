@@ -1,22 +1,22 @@
 <resources>
-    <string name="app_name">Grocery List</string>
+    <string name="app_name">ToNoteDo</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="update">Update</string>
     <string name="delete_all">Delete All</string>
     <string name="delete_this">Delete the entire list. This action can not be undone. You\'re sure ?</string>
-    <string name="place_your_item">Place your item</string>
+    <string name="place_your_item">Place your ToDo</string>
     <string name="write_here">Write here</string>
     <string name="confirm">Confirm</string>
     <string name="dismiss">Dismiss</string>
     <string name="are_you_sure">Are you sure ?</string>
-    <string name="grocery">Grocery</string>
-    <string name="recipe">Recipes</string>
-    <string name="grocery_add" translatable="false">Grocery Add</string>
-    <string name="recipe_add" translatable="false">Recipe Add</string>
-    <string name="recipe_update" translatable="false">RecipeUpdate</string>
-    <string name="write_your_recipe">Write your recipe</string>
-    <string name="edit_your_recipe">Edit your recipe</string>
+    <string name="todo">ToDo</string>
+    <string name="note">Notes</string>
+    <string name="todo_add">ToDo Add</string>
+    <string name="note_add">Note Add</string>
+    <string name="note_update">NoteUpdate</string>
+    <string name="write_your_note">Write your note</string>
+    <string name="edit_your_note">Edit your note</string>
     <string name="title">Title</string>
     <string name="content">Content</string>
     <string name="delete_the_item">You will delete the item.</string>
