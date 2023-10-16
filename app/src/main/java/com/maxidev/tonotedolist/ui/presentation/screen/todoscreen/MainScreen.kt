@@ -22,7 +22,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.maxidev.grocerylist.R
+import com.maxidev.tonotedolist.R
 import com.maxidev.tonotedolist.data.db.entities.ToDoEntity
 import com.maxidev.tonotedolist.ui.components.AppDialog
 import com.maxidev.tonotedolist.ui.components.AppFloatingButton

@@ -23,7 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.maxidev.grocerylist.R
+import com.maxidev.tonotedolist.R
 import com.maxidev.tonotedolist.ui.components.RowOfButtons
 import com.maxidev.tonotedolist.ui.presentation.viewmodel.TodoViewModel
 import com.maxidev.tonotedolist.utils.Constants.TOAST_TEXT_SAVED

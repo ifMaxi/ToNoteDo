@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.maxidev.grocerylist"
+    namespace = "com.maxidev.tonotedolist"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.maxidev.grocerylist"
+        applicationId = "com.maxidev.tonotedolist"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -87,7 +87,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    implementation("androidx.media3:media3-test-utils:1.1.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
 

@@ -6,7 +6,7 @@ import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Notes
 import androidx.compose.material.icons.filled.QuestionMark
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.maxidev.grocerylist.R
+import com.maxidev.tonotedolist.R
 
 /**
  * This class will contain the destinations of the app with their respective routes.

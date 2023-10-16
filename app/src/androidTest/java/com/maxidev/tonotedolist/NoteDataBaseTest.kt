@@ -17,7 +17,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class RecipeDataBaseTest {
+class NoteDataBaseTest {
     private lateinit var noteDao: NoteDao
     private lateinit var db: AppDataBase
     private val recipeOne = NoteEntity(id = 1L, noteTitle = "InsertTest", noteBody = "🍞")

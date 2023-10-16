@@ -8,7 +8,7 @@ import androidx.compose.ui.text.googlefonts.Font
 import androidx.compose.ui.text.googlefonts.GoogleFont
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.sp
-import com.maxidev.grocerylist.R
+import com.maxidev.tonotedolist.R
 
 val downloadedFonts = GoogleFont.Provider(
     providerAuthority = "com.google.android.gms.fonts",
